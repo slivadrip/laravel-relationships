@@ -10,8 +10,8 @@ class OneToManyController extends Controller
     public function oneToMany()
     {
         //$country = Country::where('name', 'Brasil')->get()->first();
-        $keySearch = '';
-        $countries = Country::where('name', 'LIKE', "%{$keySearch}%")->with('states')->toSql();
+        $keySearch = 'A';
+        $countries = Country::where('name', 'LIKE', "%{$keySearch}%")->with('states')->get();
        // dd($countries);
         
         foreach($countries as $country) {
@@ -30,7 +30,7 @@ class OneToManyController extends Controller
     
     public function manyToOne()
     {
-        $stateName = 'Pequin';
+        $stateName = 'Goiás';
         $state = State::where('name', $stateName)->get()->first();
         echo "<b>{$state->name}</b>";
         
@@ -66,8 +66,8 @@ class OneToManyController extends Controller
     public function oneToManyInsert()
     {
         $dataForm = [
-            'name'      => 'Bahia',
-            'initials'  => 'BA',
+            'name'      => 'Ceará',
+            'initials'  => 'CE',
         ];
         
         $country = Country::find(1);
@@ -79,8 +79,8 @@ class OneToManyController extends Controller
     public function oneToManyInsertTwo()
     {
         $dataForm = [
-            'name'      => 'Bahia',
-            'initials'  => 'BA',
+            'name'      => 'ACRE',
+            'initials'  => 'AC',
             'country_id' => '1',
         ];
         
@@ -101,3 +101,4 @@ class OneToManyController extends Controller
         echo "<br>Total Cidades: {$cities->count()}";
     }
 }
+

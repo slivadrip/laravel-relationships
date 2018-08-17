@@ -18,16 +18,16 @@ $this->get('one-to-many-insert-two', 'OneToManyController@oneToManyInsertTwo');
 
 /**
  * Has Many Through
- 
+ */
 $this->get('has-many-through', 'OneToManyController@hasManyThrough');
-*/
+
 /**
  * Many To Many
- 
+ */
 $this->get('many-to-many', 'ManyToManyController@manyToMany');
 $this->get('many-to-many-inverse', 'ManyToManyController@manyToManyInverse');
 $this->get('many-to-many-insert', 'ManyToManyController@manyToManyInsert');
-*/
+
 /**
  * Relation Polymorphic
  
